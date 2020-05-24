@@ -1,10 +1,109 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+
 import preval from 'preval.macro';
 
 import 'hover.css';
 
-import island from './img/acnh island may 24 2020.png';
+import island from './img/acnh_island.png';
+import islandFruit from './img/acnh_fruit.png';
+import islandFlowers from './img/acnh_flowers.png';
+import islandTrees from './img/acnh_trees.png';
+
+const useLegendStyles = makeStyles((theme) => ({
+  form: {
+    display: 'block'
+  },
+}));
+
+function Legend({ treesChecked=true, onTreesChecked, fruitChecked=true, onFruitChecked, flowersChecked=true, onFlowersChecked }) {
+  const classes = useLegendStyles();
+
+  const handleTreesChecked = (event) => {
+    onTreesChecked(event.target.checked);
+  };
+
+  const handleFruitChecked = (event) => {
+    onFruitChecked(event.target.checked);
+  };
+
+  const handleFlowersChecked = (event) => {
+    onFlowersChecked(event.target.checked);
+  };
+
+  return (
+    <FormControl component="fieldset" className={classes.form}>
+
+      <FormControlLabel
+        control={<Checkbox checked={treesChecked} onChange={ handleTreesChecked } name="trees" />}
+        label="Trees"
+      />
+
+      <FormControlLabel
+        control={<Checkbox checked={fruitChecked} onChange={ handleFruitChecked } name="fruit" />}
+        label="Fruit"
+      />
+
+      <FormControlLabel
+        control={<Checkbox checked={flowersChecked} onChange={ handleFlowersChecked } name="flowers" />}
+        label="Flowers"
+      />
+        
+    </FormControl>
+  );
+}
+
+const useIslandStyles = makeStyles((theme) => ({
+  layerImage: {
+    position: 'absolute',
+    objectFit: 'contain',
+    borderRadius: '40px',
+  },
+  image: {
+    objectFit: 'contain',
+    background: '#75d5ff',
+    borderRadius: '40px',
+    boxShadow: '0 0 15px rgba(0,0,0,0.5)'
+  },
+}));
+
+function Island({ checked }) {
+  const classes = useIslandStyles();
+
+  const islandImage = () => {
+    return island;
+  }
+
+  return (
+    <div className="hvr-grow">
+      { checked.trees !== true ? '' : (
+          <img alt="ACNH Trees" src={ islandTrees } width="100%" height="100%" align="center" className={classes.layerImage}/>
+        )
+      } 
+
+      { checked.fruit !== true ? '' : (
+          <img alt="ACNH Fruit" src={ islandFruit } width="100%" height="100%" align="center" className={classes.layerImage}/>
+        )
+      } 
+      
+      { checked.flowers !== true ? '' : (
+          <img alt="ACNH Flowers" src={ islandFlowers } width="100%" height="100%" align="center" className={classes.layerImage}/>
+        )
+      } 
+
+      <img alt="ACNH Island" src={ island } width="100%" height="100%" align="center" className={classes.image }/>
+    </div> 
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,15 +118,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin: 'auto',
-    height: '500px',
-    width: '500px',
-    borderRadius: '40px',
-    boxShadow: '0 0 15px rgba(0,0,0,0.5)'
-  },
-  image: {
-    objectFit: 'contain',
-    background: '#75d5ff',
-    borderRadius: '40px',
+    maxHeight: '400px',
+    width: '80%',
+    maxWidth: '400px',
   },
   caption: {
     paddingTop: '10px',
@@ -50,10 +143,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SimplePaper() {
+export default function App() {
   const classes = useStyles();
-
   const buildDate = preval`module.exports = new Date().toLocaleString("en").toLowerCase();`;
+
+  const [treesChecked, setTreesChecked] = React.useState(true);
+  const [fruitChecked, setFruitChecked] = React.useState(true);
+  const [flowersChecked, setFlowersChecked] = React.useState(true);
 
   return (
     <div className={classes.root}>
@@ -62,9 +158,27 @@ export default function SimplePaper() {
       <br/>
       fruit: <a href="http://kafae-latte.deviantart.com/art/Animal-Crossing-Fruits-356876907">kafae-latte</a></div>
 
-      <div className={classes.paper += " hvr-grow"}>
-        <img alt="ACNH Island" src={island} width="100%" height="100%" align="center" className={classes.image }/>
-        <div className={classes.caption}>{ buildDate }</div>
+      <div className={classes.paper}>
+        <Island 
+          checked={{
+            trees: treesChecked,
+            fruit: fruitChecked,
+            flowers: flowersChecked
+          }}
+        />
+
+        <div className={classes.caption}>
+          <Legend 
+            treesChecked={treesChecked} 
+            onTreesChecked={(checked) => setTreesChecked(checked)}
+            fruitChecked={fruitChecked} 
+            onFruitChecked={(checked) => setFruitChecked(checked)}
+            flowersChecked={flowersChecked} 
+            onFlowersChecked={(checked) => setFlowersChecked(checked)}
+          />
+          <br/>
+          { buildDate }
+        </div>
       </div>
 
     </div>
