@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ae1fb69.chunk.css",
-    "main.js": "/static/js/main.0ea31dd6.chunk.js",
-    "main.js.map": "/static/js/main.0ea31dd6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e1b02b98.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e1b02b98.js.map",
-    "static/css/2.92a05565.chunk.css": "/static/css/2.92a05565.chunk.css",
-    "static/js/2.51b0ed66.chunk.js": "/static/js/2.51b0ed66.chunk.js",
-    "static/js/2.51b0ed66.chunk.js.map": "/static/js/2.51b0ed66.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.911cc65e3c707bb315fc8676f02377ff.js": "/precache-manifest.911cc65e3c707bb315fc8676f02377ff.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.92a05565.chunk.css.map": "/static/css/2.92a05565.chunk.css.map",
-    "static/css/main.2ae1fb69.chunk.css.map": "/static/css/main.2ae1fb69.chunk.css.map",
-    "static/js/2.51b0ed66.chunk.js.LICENSE.txt": "/static/js/2.51b0ed66.chunk.js.LICENSE.txt",
-    "static/media/acnh island may 24 2020.png": "/static/media/acnh island may 24 2020.5e8be04a.png"
+    "main.css": "/star/static/css/main.2ae1fb69.chunk.css",
+    "main.js": "/star/static/js/main.a348bab3.chunk.js",
+    "main.js.map": "/star/static/js/main.a348bab3.chunk.js.map",
+    "runtime-main.js": "/star/static/js/runtime-main.0cbad39d.js",
+    "runtime-main.js.map": "/star/static/js/runtime-main.0cbad39d.js.map",
+    "static/css/2.92a05565.chunk.css": "/star/static/css/2.92a05565.chunk.css",
+    "static/js/2.51b0ed66.chunk.js": "/star/static/js/2.51b0ed66.chunk.js",
+    "static/js/2.51b0ed66.chunk.js.map": "/star/static/js/2.51b0ed66.chunk.js.map",
+    "index.html": "/star/index.html",
+    "precache-manifest.550c324178017053a3e8916eb8f6eeb3.js": "/star/precache-manifest.550c324178017053a3e8916eb8f6eeb3.js",
+    "service-worker.js": "/star/service-worker.js",
+    "static/css/2.92a05565.chunk.css.map": "/star/static/css/2.92a05565.chunk.css.map",
+    "static/css/main.2ae1fb69.chunk.css.map": "/star/static/css/main.2ae1fb69.chunk.css.map",
+    "static/js/2.51b0ed66.chunk.js.LICENSE.txt": "/star/static/js/2.51b0ed66.chunk.js.LICENSE.txt",
+    "static/media/acnh island may 24 2020.png": "/star/static/media/acnh island may 24 2020.5e8be04a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e1b02b98.js",
+    "static/js/runtime-main.0cbad39d.js",
     "static/css/2.92a05565.chunk.css",
     "static/js/2.51b0ed66.chunk.js",
     "static/css/main.2ae1fb69.chunk.css",
-    "static/js/main.0ea31dd6.chunk.js"
+    "static/js/main.a348bab3.chunk.js"
   ]
 }
