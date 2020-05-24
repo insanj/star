@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b15bb292dabdf7d0bfb5a349b28b1e44",
+    "revision": "4c14ff2721990bd020a0f701e7f031a6",
     "url": "/star/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/star/static/css/2.92a05565.chunk.css"
   },
   {
-    "revision": "10a271fd529eb371981a",
+    "revision": "a4954bc50f1b3ab08a4a",
     "url": "/star/static/css/main.2ae1fb69.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/star/static/js/2.69361dc8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "10a271fd529eb371981a",
-    "url": "/star/static/js/main.9e5dac44.chunk.js"
+    "revision": "a4954bc50f1b3ab08a4a",
+    "url": "/star/static/js/main.1dfd0d86.chunk.js"
   },
   {
     "revision": "40b0d6137be82f57e31a",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/star/static/media/acnh_flowers.fae86c2e.png"
   },
   {
-    "revision": "14acbee1dc20505b4663979363453718",
-    "url": "/star/static/media/acnh_fruit.14acbee1.png"
+    "revision": "1499036b956f190630dcddcf46bc7f83",
+    "url": "/star/static/media/acnh_fruit.1499036b.png"
   },
   {
     "revision": "82902e0c4f8e1f20808a29142cc7f63b",
