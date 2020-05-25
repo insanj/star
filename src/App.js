@@ -118,9 +118,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin: 'auto',
-    maxHeight: '400px',
+    maxHeight: '600px',
     width: '80%',
-    maxWidth: '400px',
+    maxWidth: '600px',
   },
   caption: {
     paddingTop: '10px',
