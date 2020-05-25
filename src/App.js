@@ -18,6 +18,7 @@ import island from './img/acnh_island.png';
 import islandFruit from './img/acnh_fruit.png';
 import islandFlowers from './img/acnh_flowers.png';
 import islandTrees from './img/acnh_trees.png';
+import islandVillagers from './img/acnh_villagers.png';
 
 const useLegendStyles = makeStyles((theme) => ({
   form: {
@@ -25,7 +26,7 @@ const useLegendStyles = makeStyles((theme) => ({
   },
 }));
 
-function Legend({ treesChecked=true, onTreesChecked, fruitChecked=true, onFruitChecked, flowersChecked=true, onFlowersChecked }) {
+function Legend({ treesChecked=true, onTreesChecked, fruitChecked=true, onFruitChecked, flowersChecked=true, onFlowersChecked, villagersChecked=true, onVillagersChecked }) {
   const classes = useLegendStyles();
 
   const handleTreesChecked = (event) => {
@@ -39,6 +40,10 @@ function Legend({ treesChecked=true, onTreesChecked, fruitChecked=true, onFruitC
   const handleFlowersChecked = (event) => {
     onFlowersChecked(event.target.checked);
   };
+
+  const handleVillagersChecked = (event) => {
+    onVillagersChecked(event.target.checked);
+  }
 
   return (
     <FormControl component="fieldset" className={classes.form}>
@@ -58,6 +63,11 @@ function Legend({ treesChecked=true, onTreesChecked, fruitChecked=true, onFruitC
         label="Flowers"
       />
         
+      <FormControlLabel
+        control={<Checkbox checked={villagersChecked} onChange={ handleVillagersChecked } name="villagers" />}
+        label="Villagers"
+      />
+
     </FormControl>
   );
 }
@@ -76,7 +86,7 @@ const useIslandStyles = makeStyles((theme) => ({
   },
 }));
 
-function Island({ checked }) {
+function Island({ checked, onHoverStart, onHoverEnd }) {
   const classes = useIslandStyles();
 
   const islandImage = () => {
@@ -84,7 +94,7 @@ function Island({ checked }) {
   }
 
   return (
-    <div className="hvr-grow">
+    <div className="hvr-grow" onMouseEnter={ onHoverStart } onMouseLeave={ onHoverEnd }>
       { checked.trees !== true ? '' : (
           <img alt="ACNH Trees" src={ islandTrees } width="100%" height="100%" align="center" className={classes.layerImage}/>
         )
@@ -97,6 +107,11 @@ function Island({ checked }) {
       
       { checked.flowers !== true ? '' : (
           <img alt="ACNH Flowers" src={ islandFlowers } width="100%" height="100%" align="center" className={classes.layerImage}/>
+        )
+      } 
+
+      { checked.villagers !== true ? '' : (
+          <img alt="ACNH Villagers" src={ islandVillagers } width="100%" height="100%" align="center" className={classes.layerImage}/>
         )
       } 
 
@@ -149,7 +164,10 @@ export default function App() {
 
   const [treesChecked, setTreesChecked] = React.useState(true);
   const [fruitChecked, setFruitChecked] = React.useState(true);
-  const [flowersChecked, setFlowersChecked] = React.useState(true);
+  const [flowersChecked, setFlowersChecked] = React.useState(false);
+  const [villagersChecked, setVillagersChecked] = React.useState(true);
+
+  const [isHovering, setIsHovering] = React.useState(false);
 
   return (
     <div className={classes.root}>
@@ -159,26 +177,39 @@ export default function App() {
       fruit: <a href="http://kafae-latte.deviantart.com/art/Animal-Crossing-Fruits-356876907">kafae-latte</a></div>
 
       <div className={classes.paper}>
-        <Island 
+        <Island
           checked={{
             trees: treesChecked,
             fruit: fruitChecked,
-            flowers: flowersChecked
+            flowers: flowersChecked,
+            villagers: villagersChecked,
           }}
+
+          onHoverStart={ () => setIsHovering(true) }
+          onHoverEnd={ () => setIsHovering(false) }
         />
 
-        <div className={classes.caption}>
-          <Legend 
-            treesChecked={treesChecked} 
-            onTreesChecked={(checked) => setTreesChecked(checked)}
-            fruitChecked={fruitChecked} 
-            onFruitChecked={(checked) => setFruitChecked(checked)}
-            flowersChecked={flowersChecked} 
-            onFlowersChecked={(checked) => setFlowersChecked(checked)}
-          />
-          <br/>
-          { buildDate }
-        </div>
+        {
+          isHovering ? '' : (
+            <div className={classes.caption}>
+              <Legend 
+                treesChecked={treesChecked} 
+                onTreesChecked={(checked) => setTreesChecked(checked)}
+                fruitChecked={fruitChecked} 
+                onFruitChecked={(checked) => setFruitChecked(checked)}
+                flowersChecked={flowersChecked} 
+                onFlowersChecked={(checked) => setFlowersChecked(checked)}
+                villagersChecked={villagersChecked}
+                onVillagersChecked={(checked) => setVillagersChecked(checked)}
+              />
+              <span style={{
+                opacity: 0.4
+              }}>
+               { buildDate }
+              </span>
+            </div>
+          )
+        }
       </div>
 
     </div>

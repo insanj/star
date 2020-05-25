@@ -1,29 +1,30 @@
 {
   "files": {
     "main.css": "/star/static/css/main.2ae1fb69.chunk.css",
-    "main.js": "/star/static/js/main.9c046c21.chunk.js",
-    "main.js.map": "/star/static/js/main.9c046c21.chunk.js.map",
+    "main.js": "/star/static/js/main.62abf474.chunk.js",
+    "main.js.map": "/star/static/js/main.62abf474.chunk.js.map",
     "runtime-main.js": "/star/static/js/runtime-main.0cbad39d.js",
     "runtime-main.js.map": "/star/static/js/runtime-main.0cbad39d.js.map",
     "static/css/2.92a05565.chunk.css": "/star/static/css/2.92a05565.chunk.css",
-    "static/js/2.69361dc8.chunk.js": "/star/static/js/2.69361dc8.chunk.js",
-    "static/js/2.69361dc8.chunk.js.map": "/star/static/js/2.69361dc8.chunk.js.map",
+    "static/js/2.f36ef09d.chunk.js": "/star/static/js/2.f36ef09d.chunk.js",
+    "static/js/2.f36ef09d.chunk.js.map": "/star/static/js/2.f36ef09d.chunk.js.map",
     "index.html": "/star/index.html",
-    "precache-manifest.e27e7186721ed12abab250a64e9471ac.js": "/star/precache-manifest.e27e7186721ed12abab250a64e9471ac.js",
+    "precache-manifest.8a5e589cc3b20c6c5ae6afecf84dab22.js": "/star/precache-manifest.8a5e589cc3b20c6c5ae6afecf84dab22.js",
     "service-worker.js": "/star/service-worker.js",
     "static/css/2.92a05565.chunk.css.map": "/star/static/css/2.92a05565.chunk.css.map",
     "static/css/main.2ae1fb69.chunk.css.map": "/star/static/css/main.2ae1fb69.chunk.css.map",
-    "static/js/2.69361dc8.chunk.js.LICENSE.txt": "/star/static/js/2.69361dc8.chunk.js.LICENSE.txt",
+    "static/js/2.f36ef09d.chunk.js.LICENSE.txt": "/star/static/js/2.f36ef09d.chunk.js.LICENSE.txt",
     "static/media/acnh_flowers.png": "/star/static/media/acnh_flowers.fae86c2e.png",
     "static/media/acnh_fruit.png": "/star/static/media/acnh_fruit.1499036b.png",
     "static/media/acnh_island.png": "/star/static/media/acnh_island.82902e0c.png",
-    "static/media/acnh_trees.png": "/star/static/media/acnh_trees.be21a121.png"
+    "static/media/acnh_trees.png": "/star/static/media/acnh_trees.be21a121.png",
+    "static/media/acnh_villagers.png": "/star/static/media/acnh_villagers.913d0c9e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0cbad39d.js",
     "static/css/2.92a05565.chunk.css",
-    "static/js/2.69361dc8.chunk.js",
+    "static/js/2.f36ef09d.chunk.js",
     "static/css/main.2ae1fb69.chunk.css",
-    "static/js/main.9c046c21.chunk.js"
+    "static/js/main.62abf474.chunk.js"
   ]
 }
