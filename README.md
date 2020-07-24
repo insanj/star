@@ -2,6 +2,8 @@
 
 🥬 animal crossing new horizons map of my island, ★
 
+![](screenie.png)
+
 ## Usage
 
 This is a super minimal React app. Use the `package.json` as a reference for the available scripts, although `npm start` and `npm run build` are the only ones you will most likely use.
